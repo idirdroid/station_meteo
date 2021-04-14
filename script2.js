@@ -226,8 +226,7 @@ listElementMenu[3].addEventListener("click", function () {
         document.getElementById("resultat").appendChild(graphique);
 
         //Code d'affichage du graphique
-        let ctx = document.getElementById('graphique').getContext('2d');
-
+        //Création des tableaux de données
         let labels = [];
         let dataSet = [];
 
@@ -235,8 +234,6 @@ listElementMenu[3].addEventListener("click", function () {
             labels.push(formattedDate(result[i]["measureDate"],"long"));
             dataSet.push(result[i]["value"]);
         }
-        console.log(labels);
-        console.log(dataSet);
 
         const data = {
             labels: labels,

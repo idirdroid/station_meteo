@@ -45,7 +45,6 @@ function callApi(url, request, measureType, fDate, tDate, displayFn) {
     })
 }
 
-
 //***************************************************************
 //***************************************************************
 //Récupération des entrées de menu.

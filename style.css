@@ -1,0 +1,99 @@
+:root {
+}
+
+body {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    padding: 1rem;
+    border-right: solid 2px;
+    border-left: solid 2px;
+    border-bottom: solid 4px
+}
+
+h1 {
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 3rem;
+    background-color: darkorange;
+}
+
+h3 {
+    font-family: Arial;
+    font-weight: bold;
+}
+
+p {
+    font-family: Arial;
+}
+
+input {
+    padding: 5px;
+    margin: 10px;
+    font-family: Arial;
+}
+
+select {
+    padding: 5px;
+    margin: 10px;
+    font-family: Arial;
+}
+
+button {
+    padding: 5px;
+    margin: 5px;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+label {
+    display: inline-block;
+}
+
+thead {
+    font-weight: bold;
+}
+
+table {
+    font-family: Arial;
+    margin: auto;
+    border-collapse: collapse;
+    border-width:1px;
+    border-style:solid;
+    border-color:black;
+}
+td {
+    border-width:1px;
+    border-style:solid;
+    border-color:black;
+    padding: 5px;
+}
+
+li {
+    list-style-type: none;
+    margin: auto;
+}
+
+a {
+    color: cadetblue;
+    font-family: "Arial";
+    text-decoration: none;
+}
+
+.parametres {
+    border : dashed 2px cadetblue;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+#dates {
+    border : dashed 2px cadetblue;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+#resultat {
+    border : dashed 2px darkorange;
+    padding: 1rem;
+    margin: 1rem;
+}

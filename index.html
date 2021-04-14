@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Station Météo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+    <h1>🌞 Station meteo de la promotion 💧</h1>
+</header>
+<main id="main">
+    <section>
+        <ul id="menu">
+            <li><a href="#">Dernière mesure</a></li>
+            <li><a href="#">Top Mesures</a></li>
+            <li><a href="#">Tableaux des mesures</a></li>
+            <li><a href="#">Graphiques des mesures</a></li>
+        </ul>
+    </section>
+    <section class="parametres">
+        <p>Quelles mesures vous intéresse ?</p>
+        <label>Type de mesure: </label>
+        <select id="listeDeroulante">
+            <option value="TEMPERATURE">Température</option>
+            <option value="PRESSURE">Pression</option>
+            <option value="HUMIDITY">Humidité</option>
+            <option value="CO2">Niveau CO2</option>
+            <option value="VOC">VOC</option>
+        </select>
+    </section>
+
+    <div id="div-dates">
+
+    </div>
+
+    <section id="resultat">
+
+    </section>
+</main>
+</body>
+<script src="script2.js"></script>
+</html>

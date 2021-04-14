@@ -219,44 +219,45 @@ listElementMenu[3].addEventListener("click", function () {
     let displayFn = function (result) {
 
         document.getElementById("resultat").innerHTML = '';
-        let graphique = document.createElement("canvas")
-        graphique.id = "graphique"
-        graphique.width = 500;
+        let graphique = document.createElement("canvas");
+        graphique.id = "graphique";
+
 
         document.getElementById("resultat").appendChild(graphique);
 
         //Code d'affichage du graphique
         let ctx = document.getElementById('graphique').getContext('2d');
 
-        let labels = "['" + formattedDate(result[0]["measureDate"],"long") + "'";
-        let dataSet = "[" + result[0]["value"];
-        console.log(result);
-        for (let i = 1; i < 5; i++) {
-            labels = labels + ",'" + formattedDate(result[i]["measureDate"],"long") + "'";
-            dataSet = dataSet + "," + result[i]["value"];
-        }
-        labels = labels + ']';
-        dataSet = dataSet + ']';
+        let labels = [];
+        let dataSet = [];
 
+        for (let i = 1; i < result.length; i++) {
+            labels.push(formattedDate(result[i]["measureDate"],"long"));
+            dataSet.push(result[i]["value"]);
+        }
         console.log(labels);
         console.log(dataSet);
 
-        let myChart = new Chart(ctx, {
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Mesures : ' + measureType,
+                backgroundColor: 'rgb(245,170,0)',
+                borderColor: 'rgb(245,170,0)',
+                data: dataSet,
+                tension: 0.3
+            }]
+        };
+        const config = {
             type: 'line',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Courbe des ' + measureType,
-                    data: dataSet,
-                    borderColor: 'rgb(75, 192, 192)',
-                    borderWidth: 1,
-                }]
-            },
-            options: {
-                responsive: true,
-            }
+            data,
+            options: {}
+        };
+        let myChart = new Chart(
+            document.getElementById('graphique'),
+            config
+        );
 
-        });
     }
 //Appel de l'API
     callApi(baseApiUrl, '', measureType, fDate, tDate, displayFn);
